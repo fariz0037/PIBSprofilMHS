@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PROFIL MAHASISWA</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<header>
+  <h1>&#128100; PROFIL MAHASISWA</h1>
+</header>
+<main>
+<nav>
+  <a href="#biodata">Biodata</a>
+  <a href="#pendidikan">Pendidikan</a>
+  <a href="#pengalaman">Pengalaman</a>
+  <a href="#keahlian">Keahlian</a>
+  <a href="#publikasi">Publikasi</a>
+</nav>
+<section>
+  <div class="isi" id="biodata">
+    <h2>Biodata</h2>
+    <p>NIM : 2025081022</p>
+    <p>Nama : Fariz Akbar Setyanam</p>
+    <p>Agama : Islam</p>
+    <p>Tanggal Lahir : 3 Juli 2007</p>
+    <p>Tempat Lahir : Tangerang Selatan</p>
+  </div>
+  <div class="isi" id="pendidikan">
+    <h2>Pendidikan</h2>
+    <p>S1 Sistem Informasi, Universitas Pembangunan Jaya (2025 - sekarang)</p>
+    <p>SMA Dharma karya ut(2022 - 2025)</p>
+    <p>SMP Negeri 2 Tangerang Selatan (2019 - 2022)</p>
+  </div>
+  <div class="isi" id="pengalaman">
+    <h2>Pengalaman</h2>
+    <p>Membuat web sederhana untuk tugas kuliah</p>
+    <p>Mengikuti program kepanitiaan prodi</p>
+  </div>
+  <div class="isi" id="keahlian">
+    <h2>Keahlian</h2>
+    <p>HTML dan CSS</p>
+    <p>Microsoft Office</p>
+  </div>
+  <div class="isi" id="publikasi">
+    <h2>Publikasi</h2>
+    <p>Belum ada publikasi</p>
+  </div>
+</section>
+<aside>
+  <h2>Hobi</h2>
+  <p>Bulutangkis</p>
+  <p>Bermain game online</p>
+</aside>
+</main>
+<footer>
+  <div class="f1">Twitter: @akun<br>FB: @akun<br>Instagram: @fariz_yaaa</div>
+  <div class="f2">&copy; 2026 All Rights Reserved</div>
+  <div class="f3"><b>Profil Fariz</b><br>Mahasiswa yang terus mencoba berkarya </div>
+</footer>
+<script>
+function tampil() {
+  var id = location.hash.substring(1);
+  if (id == "") { id = "biodata"; }
+
+  var isi = document.querySelectorAll(".isi");
+  var menu = document.querySelectorAll("nav a");
+  for (var i = 0; i < isi.length; i++) {
+    isi[i].style.display = "none";
+    menu[i].classList.remove("aktif");
+  }
+  document.getElementById(id).style.display = "block";
+  document.querySelector('nav a[href="#' + id + '"]').classList.add("aktif");
+}
+
+window.onhashchange = tampil;
+tampil();
+</script>
+</body>
+</html>
